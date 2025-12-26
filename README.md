@@ -150,5 +150,56 @@ Fraud spikes align with New Year clearance sales
 
 Confirms correlation between high-discount events and fraud attempts
 
+---
+<br/>
 
+## **High-Risk Customer Profile**
+
+Most Fraud-Prone Segment Identified:
+
+Month: January
+
+Source: Ads
+
+Gender: Male
+
+Age: 30–35
+
+Signup-to-purchase time: < 1 hour
+
+Purchase value: < 50
+
+## **Business Recommendations**
+
+Tools Used: SQL, Tableau
+
+- Apply stricter checks within the first 24 hours of signup
+
+- Limit number of transactions immediately after signup
+
+- Introduce ID verification for high-risk age segments
+
+- Reduce or optimize paid ad spend on high-fraud channels
+
+- Implement dynamic transaction limits based on signup age
+
+- Develop a fraud risk score using behavioral signals
+
+## **KPIs to Track**
+
+- Fraudulent transaction percentage
+
+- Fraud within first 24 hours
+
+- Fraud by acquisition source
+
+- Fraud by purchase value band
+
+- Signup-to-purchase conversion risk
+
+- Revenue vs fraud loss by channel
+
+## **Conclusion**
+
+This analysis demonstrates how early behavioral signals, low-value purchases, and acquisition sources drive fraud risk in UAE e-commerce. By implementing targeted controls and dynamic risk rules, the business can reduce fraud exposure while maintaining customer experience and revenue growth.
 
