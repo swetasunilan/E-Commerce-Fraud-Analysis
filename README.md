@@ -1,5 +1,5 @@
 # E-Commerce-Fraud-Analysis
-
+### Tools: Excel, MySQL, Tableau
 ---
 ##  Table of Contents
 - [Project Background](#project-background)
@@ -17,25 +17,6 @@
 Souq Nest is a UAE-based e-commerce platform experiencing rapid growth driven by digital adoption, promotional campaigns, and seasonal sales events such as New Year clearance sales. With increasing transaction volumes, the company observed a rising risk of fraudulent activities, prompting the need for a structured fraud detection analysis.
 
 This fraud detection analysis conducted for Souq Nest, reporting to business and risk stakeholders, using 150,000+ transaction records of the company. The study evaluates fraud trends across signup behavior, purchase value, demographics, acquisition sources, and seasonal patterns. It identifies high-risk customer profiles and early fraud indicators that significantly exceed UAE benchmarks. The insights enable data-driven fraud prevention strategies to reduce losses while maintaining customer experience and revenue growth.
-
----
-<br/>
-
-## **Dataset Overview**
-
-The dataset represents realistic e-commerce transaction behavior and includes:
-
-- 150,000+ records spanning multiple months
-
-- Customer attributes (age group, gender)
-
-- Transaction details (purchase value, purchase time)
-
-- Behavioral metrics (signup time, signup-to-purchase gap)
-
-- Acquisition channels (Direct, Ads, Referral, etc.)
-
-- Fraud labels identifying legitimate vs fraudulent transactions
 
 ---
 <br/>
@@ -63,11 +44,30 @@ The insights generated are intended to help stakeholders:
 ---
 <br/>
 
-## **Initial Checks & Metrics**
+## **Dataset Overview**
+
+The dataset represents e-commerce transaction behavior and includes:
+
+- 150,000+ records of trasaction in a year
+
+- Customer attributes (age group, gender)
+
+- Transaction details (purchase value, purchase time)
+
+- Behavioral metrics (signup time, signup-to-purchase gap)
+
+- Acquisition channels (Direct, Ads, SEO)
+
+- Fraud labels (class) identifying legitimate vs fraudulent transactions
+
+---
+<br/>
+
+## **Initial Checks & Data Preparation**
 
 The analysis began with validating and preparing a dataset of 150,000+ UAE e-commerce transaction records to ensure reliability for fraud detection. The following initial data quality checks were performed to establish a clean and trustworthy analytical foundation:
 
-- Verified overall data completeness and identified missing or inconsistent values
+- Verified overall data completeness and identified missing or inconsistent values uaing **Excel**
 
 - Detected and reviewed duplicate user IDs and device IDs to flag potential abuse or repeat fraud behavior
 
@@ -91,3 +91,64 @@ Additional exploratory checks focused on risk segmentation across customer and t
 The fraud analysis of 150,000+ UAE e-commerce transactions reveals a high overall fraud rate of ~9%, significantly exceeding the typical UAE e-commerce benchmark of 2–3%, indicating elevated risk exposure. Fraud activity is heavily concentrated immediately after user signup, with the highest incidence occurring within the first hour (7,630 fraudulent vs 574 legitimate transactions). Fraud probability begins to decline from the second day onward, with a noticeable drop within a 12-day window, highlighting early post-signup behavior as the most critical risk period. Seasonal analysis shows clear fraud spikes during New Year clearance sales, aligning with high-discount promotional periods.
 
 Further segmentation identifies low-value transactions (below 50) as the primary fraud vector, suggesting “testing” behavior rather than high-ticket abuse. The 31–35 age group shows disproportionately high fraud rates, potentially driven by fake or poorly verified profiles, supporting the need for age-based verification controls. Among acquisition channels, paid ads contribute the highest fraud volume (5,513 cases) and show poor risk-to-revenue efficiency, indicating possible overspending on low-quality traffic, while SEO traffic exhibits faster signup-to-purchase fraud behavior than ads. Gender analysis shows higher absolute fraud volume among males, largely driven by transaction volume rather than inherent risk. Overall, the highest-risk profile emerges as male users around 30 years of age, acquired via ads, making low-value purchases immediately after signup, reinforcing the need for stricter early-stage controls such as dynamic transaction limits and enhanced identity verification.
+
+---
+<br/>
+
+## **Key Analysis & Insights**
+
+**1. Fraud Timing (Signup → Purchase)**
+
+- Highest fraud occurs within the first hour of signup
+
+- Legit: 574 | Fraud: 7,630
+
+Fraud probability starts dropping from Day 2
+
+A 12-day high-risk window exists post-signup
+
+Fraud declines significantly after 4 months
+
+Insight: Immediate post-signup activity is the strongest fraud indicator.
+
+Image:
+
+**2. Purchase Value Analysis**
+
+Fraud is concentrated in low-value “testing” transactions
+
+Fraud risk increases sharply for purchase values below 50
+
+High-value transactions show comparatively lower fraud incidence
+
+**3. Age Group Analysis**
+
+31–35 age group shows disproportionately high fraud
+
+Potential drivers include fake or manipulated profiles
+
+**4. Acquisition Source Analysis**
+
+Ads channel has the highest fraud volume (5,513 cases)
+
+SEO shows faster signup-to-purchase fraud behavior
+
+Indicates overspending on low-quality acquisition traffic
+
+**5. Gender Analysis**
+
+| Gender | Transactions | Fraud Cases |
+| ------ | ------------ | ----------- |
+| Female | 57,102       | 5,717       |
+| Male   | 79,859       | 8,434       |
+
+Fraud differences are partly driven by volume; gender alone is not a primary fraud driver.
+
+**6. Seasonality**
+
+Fraud spikes align with New Year clearance sales
+
+Confirms correlation between high-discount events and fraud attempts
+
+
+
