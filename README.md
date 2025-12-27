@@ -101,13 +101,13 @@ Further segmentation identifies low-value transactions (below 50 AED) as the pri
 
 ## **Key Analysis & Insights**
 
-**1. Fraud By Month Analysis**
+### **1. Fraud By Month Analysis**
 
 The chart shows fraudulent transactions by month with a very sharp spike in **January (7000+ cases)** compared to all other months. After January, fraud volumes drop drastically and remain relatively low and stable throughout the rest of the year, fluctuating mostly between 200–900 cases per month.
 
 From February onwards, fraud shows a mild rise during April–July, followed by a steady decline toward the end of the year, reaching the lowest levels in November and December. This indicates that fraud activity is highly seasonal and event-driven, rather than evenly distributed across months.
 
-### Key Insights:
+**Key Insights:**
 
 - January is a clear outlier, contributing the majority of annual fraud cases.
 
@@ -121,13 +121,13 @@ From February onwards, fraud shows a mild rise during April–July, followed by 
   
 ![Fraud By Month](https://github.com/swetasunilan/E-Commerce-Fraud-Analysis/blob/main/Data%20Visualization/fraud_by_month.jpg)
 
-**2. Fraud Timing (Signup → Purchase)**
+### **2. Fraud Timing (Signup → Purchase)**
 
 Fraudulent transactions by signup-to-purchase time (datediff in days) shows an overwhelming concentration at **Day 0** (same-day purchase). Fraud volume drops sharply after and remains very low across days 1–24, indicating that delayed purchases are far less risky.
 
 This steep fall-off highlights that fraudsters act immediately after account creation, while genuine users tend to purchase after some delay. The distribution clearly separates high-risk instant conversions from lower-risk delayed behavior.
 
-### Key Insights:
+**Key Insights:**
 
 - **~75–80%** of total fraud occurs on Day 0 (within the first 24 hours of signup)- Legit: 574 | Fraud: 7,630.
 
@@ -141,13 +141,13 @@ This steep fall-off highlights that fraudsters act immediately after account cre
 
 ![Fraud Timing](https://github.com/swetasunilan/E-Commerce-Fraud-Analysis/blob/main/Data%20Visualization/fraud_by_datediff.jpg)
 
-**3. Fraud By Day**
+### **3. Fraud By Day**
 
 With very high fraud volumes during the first half (Days 1–12), fraudulent signups by day of the month, peaks close to **~1,000** fraud cases per day. This indicates intense fraudulent account creation early in the signup cycle.
 
 After Day 12, fraud drops sharply to nearly one-third of the earlier levels and then stabilizes between 150–250 cases per day toward the end of the month. The downward trend suggests that fraudsters are heavily concentrated in early-period signup activity.
 
-### Key Insights:
+**Key Insights:**
 
 - Days 1–12 are the highest-risk signup period for fraud.
 
@@ -161,13 +161,13 @@ After Day 12, fraud drops sharply to nearly one-third of the earlier levels and 
 
 ![Fraud By Day](https://github.com/swetasunilan/E-Commerce-Fraud-Analysis/blob/main/Data%20Visualization/fraud_by_day.jpg)
 
-**4. Purchase Value Analysis**
+### **4. Purchase Value Analysis**
 
 The relationship between purchase value and fraud rate, highlights a strong concentration of fraud in low-value transactions. Fraud rises sharply from very small amounts and peaks in the *AED 10–AED 40* range, after which it steadily declines as purchase value increases.
 
 Beyond a purchase value of ~AED 50, fraud drops significantly, and transactions above AED 90– AED 100 show near-zero fraud activity. This pattern indicates that fraudsters primarily use low-value “testing” transactions rather than attempting high-value purchases.
 
-### Key Insights:
+**Key Insights:**
 
 - **~65–70%** of total fraud occurs in purchases below AED 50, making this the highest-risk value band.
 
@@ -181,13 +181,13 @@ Beyond a purchase value of ~AED 50, fraud drops significantly, and transactions 
   
 ![Purchase Value Analysis](https://github.com/swetasunilan/E-Commerce-Fraud-Analysis/blob/main/Data%20Visualization/fraud_by_pv.jpg)
 
-**5. Fraud By Source**
+### **5. Fraud By Source**
 
 Monthly fraud trends by acquisition source (Ads, Direct, SEO) was conducted. Fraud from Ads and SEO dominates across all months, following a similar seasonal pattern with a steady rise from March, peaking between May and July, and then declining sharply toward the end of the year. Direct traffic consistently contributes the lowest fraud volume throughout the year.
 
 While Ads and SEO track closely, SEO shows slightly higher fraud counts than Ads during peak months, indicating faster or riskier conversions from organic traffic. The sharp drop across all sources after August highlights the strong impact of seasonality and campaign-driven traffic on fraud activity.
 
-### Key Insights:
+**Key Insights:**
 
 - Ads and SEO are the primary drivers of fraud volume across the year.
 
@@ -201,13 +201,13 @@ While Ads and SEO track closely, SEO shows slightly higher fraud counts than Ads
   
 ![Fraud By Source](https://github.com/swetasunilan/E-Commerce-Fraud-Analysis/blob/main/Data%20Visualization/fraud_by_source.jpg)
 
-**6. Acquisition Source Analysis**
+### **6. Acquisition Source Analysis**
 
 The graph shows signup-to-purchase time (datediff) aggregated by acquisition source, split into legitimate and fraudulent transactions. SEO and Ads dominate total signup-to-purchase duration, together accounting for the majority of overall customer activity, while Direct traffic shows significantly lower total datediff, reflecting fewer users and faster conversions.
 
 In percentage terms, fraudulent activity is more concentrated in faster conversion sources. SEO contributes the highest share of fraud within short signup-to-purchase windows, followed closely by Ads, while Direct traffic contributes the smallest fraud share. This indicates that users acquired through SEO and Ads tend to convert faster and carry higher fraud risk.
 
-### Key Insights:
+**Key Insights:**
 
 - SEO accounts for the highest fraud share **(~40–45%)** within signup-to-purchase activity.
 
@@ -221,13 +221,13 @@ In percentage terms, fraudulent activity is more concentrated in faster conversi
 
 ![Acquisition Source Analysis](https://github.com/swetasunilan/E-Commerce-Fraud-Analysis/blob/main/Data%20Visualization/datediff_by_source.jpg)
 
-**7. Age Group Analysis**
+### **7. Age Group Analysis**
 
 Transaction and fraud distribution across age groups shows the highest activity concentrated between ages **20–40**. Transaction volume peaks in the **26–30 age group (~29.4K transactions)**, followed by **31–35 (~25.5K)** and **21–25 (~26.7K)**, indicating that young-to-mid working-age users dominate platform usage.
 
 Fraud volume follows a similar pattern but is disproportionately higher in the 31–35 age group, which records the highest fraud count (~3,113 cases). Beyond age 40, both transaction volume and fraud decline sharply, with users above 55 contributing less than ~2–3% of total transactions and negligible fraud.
 
-### Key Insights:
+**Key Insights:**
 
 - 31–35 age group is the riskiest segment, contributing **~24–26%** of total fraud while accounting for **~20–22%** of transactions.
 
@@ -241,7 +241,7 @@ Fraud volume follows a similar pattern but is disproportionately higher in the 3
 - 
 ![Age Group Analysis](https://github.com/swetasunilan/E-Commerce-Fraud-Analysis/blob/main/Data%20Visualization/fraud_by_age.jpg)
 
-**8. Gender Analysis**
+### **8. Gender Analysis**
 
 Conducting fraudulent vs legitimate transactions by gender shows male users account for a higher overall transaction volume compared to female users and therefore also show a higher absolute count of fraudulent transactions.
 
@@ -252,7 +252,7 @@ Conducting fraudulent vs legitimate transactions by gender shows male users acco
 
 Fraud rates are fairly comparable across genders. Female users have a fraud rate of **~10.0%**(5,717 frauds out of 57,102 transactions) while male users show a slightly higher fraud rate of **~10.6%** (8,434 frauds out of 79,859 transactions). This indicates that fraud differences are driven more by volume than gender-specific behavior.
 
-### Key Insights:
+**Key Insights:**
 
 - Male users contribute **~58%** of total transactions and **~60%** of total fraud volume.
 
@@ -264,13 +264,13 @@ Fraud rates are fairly comparable across genders. Female users have a fraud rate
 
 ![Gender Analysis](https://github.com/swetasunilan/E-Commerce-Fraud-Analysis/blob/main/Data%20Visualization/fraud_by_gender.jpg) 
 
-**9. Fraud By Shipping City**
+### **9. Fraud By Shipping City**
 
 The chart compares legitimate vs fraudulent transactions by shipping city, showing that major metro and logistics hubs such as Dubai, Abu Dhabi, Sharjah, and Mumbai have the highest overall transaction volumes. Dubai stands out with the largest total volume, and consequently also records a higher absolute number of fraudulent transactions.
 
 While fraud volumes generally follow transaction volume patterns, certain non-UAE cities (e.g., Mumbai, Karachi, Riyadh) display noticeable fraud presence relative to their total activity. This suggests that fraud risk is influenced not only by volume but also by cross-border shipping behavior.
 
-### Key Insights:
+**Key Insights:**
 
 - **Dubai** is the highest-risk city in absolute terms, driven by very high transaction volume.
 
