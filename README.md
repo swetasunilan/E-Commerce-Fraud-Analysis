@@ -13,7 +13,6 @@
 - [KPIs to Track](#kpis-to-track)
 - [Expected Impact](#expected-impact)
 - [Caveats](#caveats)
-- [Conclusion](#conclusion)
 ---
 <br/>
 
@@ -30,21 +29,21 @@ This fraud detection analysis conducted for Souq Nest, reporting to business and
 
 The primary objective of this analysis is to:
 
-- Identify fraud patterns and high-risk segments
+- Identify fraud patterns and high-risk segments.
 
-- Quantify fraud impact across time, value, and customer dimensions
+- Quantify fraud impact across time, value, and customer dimensions.
 
-- Support data-driven fraud prevention strategies
+- Support data-driven fraud prevention strategies.
 
-- Balance fraud control with customer experience and revenue growth
+- Balance fraud control with customer experience and revenue growth.
 
 The insights generated are intended to help stakeholders:
 
-- Improve fraud monitoring and early detection
+- Improve fraud monitoring and early detection.
 
-- Optimize risk rules and verification checks
+- Optimize risk rules and verification checks.
 
-- Reduce financial losses without affecting genuine customers
+- Reduce financial losses without affecting genuine customers.
 
 ---
 <br/>
@@ -53,17 +52,17 @@ The insights generated are intended to help stakeholders:
 
 The dataset represents e-commerce transaction behavior and includes:
 
-- 150,000+ records of trasaction in a year
+- 150,000+ records of trasaction in a year.
 
-- Customer attributes (age group, gender)
+- Customer attributes (age group, gender).
+- 
+- Transaction details (purchase value, purchase time).
 
-- Transaction details (purchase value, purchase time)
+- Behavioral metrics (signup time, signup-to-purchase gap).
 
-- Behavioral metrics (signup time, signup-to-purchase gap)
+- Acquisition channels (Direct, Ads, SEO).
 
-- Acquisition channels (Direct, Ads, SEO)
-
-- Fraud labels (class) identifying legitimate vs fraudulent transactions
+- Fraud labels (class) identifying legitimate vs fraudulent transactions.
 
 ---
 <br/>
@@ -73,15 +72,15 @@ The dataset represents e-commerce transaction behavior and includes:
 The analysis began with preparing and validating a dataset of **150,000+** UAE e-commerce transaction records to ensure reliability for fraud detection.<br/>
 The following initial data quality checks were performed to establish a clean and trustworthy analytical foundation:
 
-- Verified overall data completeness and identified missing or inconsistent values using **Excel**
+- Verified overall data completeness and identified missing or inconsistent values using **Excel**.
 
-- Detected and reviewed duplicate user IDs and device IDs to flag potential abuse or repeat fraud behavior
+- Detected and reviewed duplicate user IDs and device IDs to flag potential abuse or repeat fraud behavior.
 
-- Validated timestamp consistency between signup and purchase events
+- Validated timestamp consistency between signup and purchase events.
 
-- Confirmed correct data types for date, time, and numeric fields using [sql](https://github.com/swetasunilan/E-Commerce-Fraud-Analysis/blob/main/SQL/data_preparation.sql)
+- Confirmed correct data types for date, time, and numeric fields using [sql](https://github.com/swetasunilan/E-Commerce-Fraud-Analysis/blob/main/SQL/data_preparation.sql).
 
-- Reviewed geographic attributes (shipping city, billing city, BIN country) for logical consistency within the UAE context
+- Reviewed geographic attributes (shipping city, billing city, BIN country) for logical consistency within the UAE context.
 
 Key baseline metrics were established to understand the overall transaction health and fraud exposure. These included total transactions, unique users and devices, overall fraudulent transaction percentage, average and median purchase value and distribution of transactions by acquisition source. Signup-to-purchase time gaps were calculated to assess early-purchase behavior, a known indicator of potential fraud.
 
@@ -108,7 +107,7 @@ The chart shows fraudulent transactions by month with a very sharp spike in **Ja
 
 From February onwards, fraud shows a mild rise during April–July, followed by a steady decline toward the end of the year, reaching the lowest levels in November and December. This indicates that fraud activity is highly seasonal and event-driven, rather than evenly distributed across months.
 
-Key Insights:
+### Key Insights:
 
 - January is a clear outlier, contributing the majority of annual fraud cases.
 
@@ -128,7 +127,7 @@ Fraudulent transactions by signup-to-purchase time (datediff in days) shows an o
 
 This steep fall-off highlights that fraudsters act immediately after account creation, while genuine users tend to purchase after some delay. The distribution clearly separates high-risk instant conversions from lower-risk delayed behavior.
 
-Key Insights:
+### Key Insights:
 
 - **~75–80%** of total fraud occurs on Day 0 (within the first 24 hours of signup)- Legit: 574 | Fraud: 7,630.
 
@@ -148,7 +147,7 @@ With very high fraud volumes during the first half (Days 1–12), fraudulent sig
 
 After Day 12, fraud drops sharply to nearly one-third of the earlier levels and then stabilizes between 150–250 cases per day toward the end of the month. The downward trend suggests that fraudsters are heavily concentrated in early-period signup activity.
 
-Key Insights:
+### Key Insights:
 
 - Days 1–12 are the highest-risk signup period for fraud.
 
@@ -168,7 +167,7 @@ The relationship between purchase value and fraud rate, highlights a strong conc
 
 Beyond a purchase value of ~AED 50, fraud drops significantly, and transactions above AED 90– AED 100 show near-zero fraud activity. This pattern indicates that fraudsters primarily use low-value “testing” transactions rather than attempting high-value purchases.
 
-Key Insights:
+### Key Insights:
 
 - **~65–70%** of total fraud occurs in purchases below AED 50, making this the highest-risk value band.
 
@@ -188,7 +187,7 @@ Monthly fraud trends by acquisition source (Ads, Direct, SEO) was conducted. Fra
 
 While Ads and SEO track closely, SEO shows slightly higher fraud counts than Ads during peak months, indicating faster or riskier conversions from organic traffic. The sharp drop across all sources after August highlights the strong impact of seasonality and campaign-driven traffic on fraud activity.
 
-Key Insights:
+### Key Insights:
 
 - Ads and SEO are the primary drivers of fraud volume across the year.
 
@@ -208,7 +207,7 @@ The graph shows signup-to-purchase time (datediff) aggregated by acquisition sou
 
 In percentage terms, fraudulent activity is more concentrated in faster conversion sources. SEO contributes the highest share of fraud within short signup-to-purchase windows, followed closely by Ads, while Direct traffic contributes the smallest fraud share. This indicates that users acquired through SEO and Ads tend to convert faster and carry higher fraud risk.
 
-Key Insights:
+### Key Insights:
 
 - SEO accounts for the highest fraud share **(~40–45%)** within signup-to-purchase activity.
 
@@ -228,7 +227,7 @@ Transaction and fraud distribution across age groups shows the highest activity 
 
 Fraud volume follows a similar pattern but is disproportionately higher in the 31–35 age group, which records the highest fraud count (~3,113 cases). Beyond age 40, both transaction volume and fraud decline sharply, with users above 55 contributing less than ~2–3% of total transactions and negligible fraud.
 
-Key Insights:
+### Key Insights:
 
 - 31–35 age group is the riskiest segment, contributing **~24–26%** of total fraud while accounting for **~20–22%** of transactions.
 
@@ -253,7 +252,7 @@ Conducting fraudulent vs legitimate transactions by gender shows male users acco
 
 Fraud rates are fairly comparable across genders. Female users have a fraud rate of **~10.0%**(5,717 frauds out of 57,102 transactions) while male users show a slightly higher fraud rate of **~10.6%** (8,434 frauds out of 79,859 transactions). This indicates that fraud differences are driven more by volume than gender-specific behavior.
 
-Key Insights:
+### Key Insights:
 
 - Male users contribute **~58%** of total transactions and **~60%** of total fraud volume.
 
@@ -271,7 +270,7 @@ The chart compares legitimate vs fraudulent transactions by shipping city, showi
 
 While fraud volumes generally follow transaction volume patterns, certain non-UAE cities (e.g., Mumbai, Karachi, Riyadh) display noticeable fraud presence relative to their total activity. This suggests that fraud risk is influenced not only by volume but also by cross-border shipping behavior.
 
-Key Insights:
+### Key Insights:
 
 - **Dubai** is the highest-risk city in absolute terms, driven by very high transaction volume.
 
