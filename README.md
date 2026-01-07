@@ -55,7 +55,7 @@ The dataset represents e-commerce transaction behavior and includes:
 - 150,000+ records of trasaction in a year.
 
 - Customer attributes (age group, gender).
-- 
+  
 - Transaction details (purchase value, purchase time).
 
 - Behavioral metrics (signup time, signup-to-purchase gap).
